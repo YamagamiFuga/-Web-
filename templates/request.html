@@ -5,11 +5,29 @@
         <meta charset = "utf-8">
     </head>
     <body>
-        <form  action = "/calres1">
+        <form  action = "/cal3" method="POST">
             <p>値を2つ入れてください</p>
-            <input type="text" name="val1"/>
-            <input type="text" name="val2"/>
+            <input type="text" name="val1" value="{{var1}}" size="8"/>
+            <input type="radio" name="name"value="+" id="nameradio" checked="checked"/> 
+            <label for="nameradio">+</label>
+
+            <input type="radio" name="name" value="-" id="nameradio" /> 
+            <label for="nameradio">-</label>
+
+            <input type="radio" name="name" value="*" id="nameradio" />
+            <label for="nameradio">*</label> 
+
+            <input type="radio" name="name" value="/" id="nameradio" /> 
+            <label for="nameradio">/</label>
+
+            <input type="text" name="val2" value="{{var2}}" size="8"/>
             <input type="submit" value="送信"/>
         </form>
+        {% if var1 != None %}
+            <hr/>
+            <p>前回結果&nbsp;{{var1}} {{name}} {{var2}} = {{ans}}</p>
+            <hr/>
+        {% endif %}
+        </body>
     </body>
 </html>
