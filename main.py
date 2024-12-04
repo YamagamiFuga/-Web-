@@ -17,3 +17,8 @@ def calres1():
     
     return render_template('response.html', var1=var1, var2=var2,
 a=a)
+    
+if __name__ == '__main__':
+    
+    app.debug = True
+    app.run(host='localhost', port=8000)
